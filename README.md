@@ -19,7 +19,7 @@ Other various actions can be performed with sets of nodes called "packages" such
 ### Robots used for the scenario
 
 #### Turtlebot Description
-The mobile robot used in the Project is a Turtlebot, created in 2010 at Willow Garage by Melonee Wise and Tully Foote. 
+The mobile robot used in the Project is a Turtlebot, created in 2010 at Willow Garage by Melonee Wise and Tully Foote. Here we used the turtlevot version 2 , similar to version 1 but with a better base. It use the kobuki base built by Yujinrobot (a  
 (insert turtlebot pic)
 
 
@@ -35,22 +35,27 @@ Move the turtlebot to a table while avoiding obstacles, take a cube with the arm
 # REPOSITORY CONTENT
 
 ### File list
+List of all the files and their dependencies in this repository
 
 ### Original Code links
+Links to original, unmodified files packages
 
 ### Information links
+Links to the differents sections of this readme
 
 
 # IMPLEMENTATION
 
 ### Setup Material
+Turtlebot, Phantom-X pincher arm, ROS indigo, Computer as workstation, Lidar system
 
 ### Starting bases
 
 #### Packages
+Turtlebo_bringup, Turtlebot_navigation, turtlebot_arm, Turtlebot_arm_moveit_demos
 
 #### Executable scripts
-
+go to a specific position.py, pick_and_place.py
 
 ### Original Commandlines and Topics
 
@@ -65,19 +70,29 @@ Move the turtlebot to a table while avoiding obstacles, take a cube with the arm
 ### Scripts of interest
 
 #### Turtlebot
+global costmap common param.yaml, local costmap common param.yaml, global common params.yaml,
 
 #### Pick And Place
+turtlebot_arm_moveit_demos/bin/pick_and_place.py
 
+### Building a map
 
 ### New Packages
-
-#### Our_project Package
-
-#### Project_ws Package
-
+Our_project Package
+Designed to be launchd on the turtlebot, contains one launch file that set up the rplidar
+Project_ws Package
+Designed to be launched from the workstation, for both turtlebot and Robotic arm 
 
 ### Launch files Description
 
+#### Our project Package
+Turtlebot_project.launch for setting up the lidar on the turtlebot, needs to be rerun for path planning
+
+#### Project_ws Package
+Project_WS.launch for entering set up coordinates and path plannification, from origin point to target destination.
+Robotic_arm.launch, for activating the pick and place action.
+Go_back.launch for entering target destination's coordinates as a starting point, to another point with coordinates that ease the next step.
+Go_back2.launch, for entering previous point as starting coordinates and origin point as target destination.
 
 
 # INSTRUCTIONS TO RUN THE PROCESS

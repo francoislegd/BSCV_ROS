@@ -77,7 +77,7 @@ Here we will discuss about the original files and actions before the modificatio
 
 #### Packages
 
-Turtlebo_bringup, Turtlebot_navigation, turtlebot_arm, Turtlebot_arm_moveit_demos
+Turtlebot_bringup, Turtlebot_navigation, turtlebot_arm, Turtlebot_arm_moveit_demos
 
 #### Executable scripts
 go to a specific position.py, pick_and_place.py
@@ -85,6 +85,10 @@ go to a specific position.py, pick_and_place.py
 ### Original Commandlines and Topics
 
 #### Turtlebot
+Package Rplidar installation after downloading:
+
+'scp rlidar-turtlebot2-indigo.zip turtlebot@192.0.100:/'
+
 
 #### Phantom-X
 

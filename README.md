@@ -56,6 +56,7 @@ Packages useful to make the Lidar device work, especially [turtlebot_le2i](https
 
 ### Information links
 Links to the differents sections in the readme file :
+[INTRODUCTION](#<INTRODUCTION>)
 
 
 

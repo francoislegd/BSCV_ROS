@@ -19,29 +19,36 @@ Other various actions can be performed with sets of nodes called "packages" such
 ### Robots used for the scenario
 
 #### Turtlebot Description
-The mobile robot used in the Project is a Turtlebot, created in 2010 at Willow Garage by Melonee Wise and Tully Foote. Here we used the turtlevot version 2 , similar to version 1 but with a better base. It use the kobuki base built by Yujinrobot (a  
+The mobile robot used in the Project is a Turtlebot. The original design was created in 2010 at Willow Garage by Melonee Wise and Tully Foote. Here we used the turtlevot version 2 , similar to version 1 but with a better base. It uses the kobuki base built by Yujinrobot (a South Korean firm originally based on conception of vacuum cleaner robots), an Asus laptop with ROS indigo installed (using Ubuntu 14.04), and an embedded Kinect V1 camera in order to perform obstacle avoidance. It's autonomy of roughly 3 hours also makes it very useful and versatile since it allows operations or modifications to be done whithout time constraint.  
 (insert turtlebot pic)
 
+As seen on the previous image, a modification was performed on the Robot by previous students. In addition to the Kinnect camera, a Lidar system has been added as an alternate way to perform obstacle avoidance and mapping. As it is easier to implement, meaning in particular less topics and associated parameters to take into account than with the Kinnect, we had to use it to implement the given scenario. 
 
 #### Phantom-X description
-4 servo-motors plus a gripper to grab the object. assembled by previous year students.
+The second system we had to program is a Phantom-X pincher robotic arm. Its conception includes 4 servo-motors plus a gripper to grab objects, giving it 4 degrees of freedom in space. In the project we used it in order to move a cube from a table to a The turtlebot.
 (insert arm pic)
 
 
 ### Scenario description
-Move the turtlebot to a table while avoiding obstacles, take a cube with the arm, put it on the turtlebot, then go back to the original position.
-
+Our goal was to complete the following scenario: 
+1. Move the turtlebot to a table while avoiding obstacles (insert scenario pics for each)
+2. take a cube with the arm and put it on the turtlebot
+3. then go back to another position while transporting the cube (here it will be the departure point in 1.).
+These steps should be performed semi-autonomously, so that the user has to write in the terminal a single command for each action to perform. 
 
 # REPOSITORY CONTENT
 
 ### File list
+Here is the list of all the files and dependancies contained in this repository we needed to build the project:
 List of all the files and their dependencies in this repository
 
 ### Original Code links
+Here are some links to some raw material we further had to modify :
 Links to original, unmodified files packages
 
 ### Information links
-Links to the differents sections of this readme
+Links to the differents sections in the readme file :
+
 
 
 # IMPLEMENTATION

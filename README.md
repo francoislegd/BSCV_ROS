@@ -83,7 +83,7 @@ Some necessary packages however needed to be installed in order to activate the 
 #### Executable scripts
 These packages also contains original executables scripts of interest as .launch files for general actions, or as .py files for specific instruction nodes. These latter includes in particular some demonstrations pre-implemented that will reveal to be the easiest way to perform the wanted action to turn the scenario successful.  
 
-### Original Commandlines and Topics
+### Basic commands
 
 #### Turtlebot
 Package Rplidar installation after downloading:

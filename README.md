@@ -44,7 +44,7 @@ Our goal was to complete the following scenario:
 
 ### File list
 Here is the list of all the files and dependancies contained in this repository we needed to build the project:
-List of all the files and their dependencies in this repository
+(List of all the files and their dependencies in this repository)
 
 ### Original Code links
 Here are some links to some raw material we further had to modify :
@@ -76,6 +76,9 @@ We had to start with the following material :
 Here we will discuss about the original files and actions before the modifications
 
 #### Packages
+For this project, some packages were already installed in order to teleoperate the turtlebot : OMPL, AMCL, Move_Base and Turtlebot Navigation. The original suggestions carried by our preliminary survey were respected since we were requiring the use of the OMPL, AMCL and Move_Base packages.
+
+Some necessary packages however needed to be installed in order to activate the Lidar device on the turtlebot and to teleoperate the robotic arm. They were present in the  rplidar-turtlebot2-indigo meta-package (especially the turtlebot_le2i package); and as arbotix and robotic_arm packages for the Phantom-X. The robotic_arm package also respect the preliminar survey since most of its sub-packages are derivated from the suggested Move_it package.
 
 Turtlebot_bringup, Turtlebot_navigation, turtlebot_arm, Turtlebot_arm_moveit_demos
 

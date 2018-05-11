@@ -92,9 +92,9 @@ Package Rplidar installation after downloading:
 
 Then in order to be runned in ROS we needed the building instructions in the integrated catkin workspace as follows :
 
-`cd ~/catkin_ws
- catkin_make
- rospack profile`
+`cd ~/catkin_ws`
+`catkin_make`
+`rospack profile`
  
 Then we could perform on the turtlebot the inizialization of the Lidar sensor by launching the basic package command, which also allows to verify if the system works properly :
 

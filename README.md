@@ -62,7 +62,7 @@ Links differents sections in the readme file for more detailed explanations :
 
 
 # ORIGINAL CONTENT
-Here we will describe the original content we had the access prior to their implementations in the project.
+Here we will describe the original content we had the access prior to its implementation in the project.
 
 ### Setup Material
 We had to start with the following material : 

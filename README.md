@@ -55,19 +55,28 @@ Packages for the Phantom-X robotic arm [arbotix & turtlebot_arm](https://github.
 Packages useful to make the Lidar device work, especially [turtlebot_le2i](https://github.com/roboticslab-fr/rplidar-turtlebot2) 
 
 ### Information links
-Links to the differents sections in the readme file :
+Links differents sections in the readme file for more detailed explanations :
+
 [INTRODUCTION](#INTRODUCTION)
 
 
 
-# IMPLEMENTATION
+# ORIGINAL CONTENT
+Here we will describe the original content we had the access prior to their implementations in the project.
 
 ### Setup Material
-Turtlebot, Phantom-X pincher arm, ROS indigo, Computer as workstation, Lidar system
+We had to start with the following material : 
+- Turtlebot2
+- Phantom-X pincher arm
+- ROS indigo (and Ubuntu 14.04) 
+- Computer as workstation
+- Lidar device (will put links to the intro)
 
 ### Starting bases
+Here we will discuss about the original files and actions before the modifications
 
 #### Packages
+
 Turtlebo_bringup, Turtlebot_navigation, turtlebot_arm, Turtlebot_arm_moveit_demos
 
 #### Executable scripts

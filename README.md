@@ -182,6 +182,8 @@ Go_back2.launch, for entering previous point as starting coordinates and origin 
 ### On the Turtlebot
 Original coordinates not precise enough, infation radius too small or to big (due to the conception of the robot, it was too far, or the lidar extension collided with the objects), solution, add a plate on which the object is placed, in order that almost no modifications have to be done on pose coordinate while not disturbing the lidar device or impairing obstacle avoidance with blind angles.
 
+Go_back process had to be divided in two steps since it was not easy for the robot to perform due to big angular differences between original and target positions. So to avoid high risks of failure we added a new step that adda an intermediate target position.  
+
 ### On the Robotic arm
 We faced several problems on the robotic arm since when we started to make it work wired connections were defectuous, explaining unwanted interruptions in the process. after repairs we faced another problem linked to the gripper articulation. In the pick_and_place python script in the moveit_demos package, we performed numerous modifications as wewere facing a problem during the pick and place action. The robot was picking the cube but was unable to perform a place action. We originally thought about unreachable place coordinates but that was not the case. We also removed the present objects in the virtual scene (two boxes and a table) but they were of no influence on the problem. 
 
@@ -193,6 +195,8 @@ We also originally thought that for more ease it would have been beter to modify
 
 
 # POINTS OF IMPROVEMENTS
+
+Speed, precision, making it more autonomous with a singe general launch file (but raises new problems)
 
 
 

@@ -25,7 +25,7 @@ The mobile robot used in the Project is a Turtlebot. The original design was cre
 As seen on the previous image, a modification was performed on the Robot by previous students. In addition to the Kinnect camera, a Lidar system has been added as an alternate way to perform obstacle avoidance and mapping. As it is easier to implement, meaning in particular less topics and associated parameters to take into account than with the Kinnect, we had to use it to implement the given scenario. 
 
 #### Phantom-X description
-The second system we had to program is a Phantom-X pincher robotic arm. Its conception includes 4 servo-motors plus a gripper to grab objects, giving it 4 degrees of freedom in space. In the project we used it in order to move a cube from a table to a The turtlebot.
+The second system we had to program is a Phantom-X pincher robotic arm, manufactured by Trossen Robotics. Its conception includes 4 servo-motors plus a gripper to grab objects, giving it 4 degrees of freedom in space. In the project we used it in order to move a cube from a table to a The turtlebot.
 (insert arm pic)
 
 
@@ -78,7 +78,7 @@ Here we will discuss about the original files and actions before the modificatio
 #### Packages
 For this project, some packages were already installed in order to teleoperate the turtlebot : OMPL, AMCL, Move_Base and Turtlebot Navigation. The original suggestions carried by our preliminary survey were respected since we were requiring the use of the OMPL, AMCL and Move_Base packages.
 
-Some necessary packages however needed to be installed in order to activate the Lidar device on the turtlebot and to teleoperate the robotic arm. They were present in the  rplidar-turtlebot2-indigo meta-package (especially the turtlebot_le2i package); and as arbotix and robotic_arm packages for the Phantom-X. The robotic_arm package also respect the preliminar survey since most of its sub-packages are derivated from the suggested Move_it package.
+Some necessary packages however needed to be installed in order to activate the Lidar device on the turtlebot and to teleoperate the robotic arm. They were present in the  rplidar-turtlebot2-indigo meta-package (especially the turtlebot_le2i package); and as arbotix and robotic_arm packages for the Phantom-X. The robotic_arm package also respects the preliminar survey since most of its sub-packages are derivated from the suggested Move_it package.
 
 #### Executable scripts
 These packages also contains original executables scripts of interest as .launch files for general actions, or as .py files for specific instruction nodes. These latter includes in particular some demonstrations pre-implemented that will reveal to be the easiest way to perform the wanted action to turn the scenario successful.  
@@ -110,7 +110,7 @@ Further instructions have been performed but since they are part of the project 
 (add link to the concerned section). 
 
 #### Phantom-X
-The Phantom-X arm needed two packages in order to be programmed. We downloaded the arbotix package (from our robotic arm manufacturer) in order to make verifications to see if the system works properly by testing its articulations, and we needed the turtlebot_arm package as it contains a bringup sub-package that will be essential for the rest of the project.
+The Phantom-X arm needed two packages in order to be programmed. We downloaded the arbotix package in order to make verifications to see if the system works properly by testing its articulations. We installed the turtlebot_arm package as it contains a bringup sub-package that will be essential for the rest of the project.
 
 Once downloaded, we wrote the setup instructions in the following order:
 

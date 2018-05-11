@@ -31,10 +31,12 @@ The second system we had to program is a Phantom-X pincher robotic arm. Its conc
 
 ### Scenario description
 Our goal was to complete the following scenario: 
-1. Move the turtlebot to a table while avoiding obstacles (insert scenario pics for each)
-2. take a cube with the arm and put it on the turtlebot
-3. then go back to another position while transporting the cube (here it will be the departure point in 1.).
-These steps should be performed semi-autonomously, so that the user has to write in the terminal a single command for each action to perform. 
+
+**1.** Move the turtlebot to a table while avoiding obstacles (insert scenario pics for each)
+**2.** take a cube with the arm and put it on the turtlebot
+**3.** then go back to another position while transporting the cube (here it will be the departure point in 1.).
+
+**These steps should be performed semi-autonomously, so that the user has to write in the terminal a single command for each action to perform.** 
 
 # REPOSITORY CONTENT
 
@@ -44,7 +46,9 @@ List of all the files and their dependencies in this repository
 
 ### Original Code links
 Here are some links to some raw material we further had to modify :
-Links to original, unmodified files packages
+Links to original, unmodified files packages :
+
+Packages for the Phantom-X robotic arm [arbotix & turtlebot_arm](https://github.com/NathanCrombez/PhantomXPincherArmROS) 
 
 ### Information links
 Links to the differents sections in the readme file :

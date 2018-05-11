@@ -123,7 +123,7 @@ Then the testing node is run using rosrun (as it is a python script):
 
 
 
-# MODIFICATIONS
+# MODIFICATIONS AND PROJECT IMPLEMENTATION
 
 ### Scripts of interest
 
@@ -134,6 +134,17 @@ global costmap common param.yaml, local costmap common param.yaml, global common
 turtlebot_arm_moveit_demos/bin/pick_and_place.py
 
 ### Building a map
+We used gmapping package to perform this action, after launching the turtlebot_le2i rplidar_minimal.launch instruction.
+at the same time we launch the rviz instruction in order to make move in the space the robot and to build the entire map of the room
+
+### Setting and parameterizing reference coordinates
+Originally put on a black square reference , memorized, we go also to the pose8position topic in order to take it. we use also amcl package to initialize coordinates on the map.
+
+### Obstacle avoidance
+we changed inflation radius in order to allow more displacement freedom to the robot. Inflation surrounds all obstacles and is also present in the local costmap
+
+### Path Planning 
+use of A star algorithm instead of dijkstra, while being a little bit less precise it is also quicker to perform 
 
 ### New Packages
 Our_project Package
@@ -165,13 +176,19 @@ Go_back2.launch, for entering previous point as starting coordinates and origin 
 
 
 # RESULT
-
+(add video link and few screen caps)
 # PROBLEMS ENCOUNTERED
 
 ### On the Turtlebot
 
 ### On the Robotic arm
+We faced several problems on the robotic arm since when we started to make it work wired connections were defectuous, explaining unwanted interruptions in the process. after repairs we faced another problem linked to the gripper articulation. In the pick_and_place python script in the moveit_demos package, we performed numerous modifications as wewere facing a problem during the pick and place action. The robot was picking the cube but was unable to perform a place action. We originally thought about unreachable place coordinates but that was not the case. We also removed the present objects in the virtual scene (two boxes and a table) but they were of no influence on the problem. 
 
+We tried also different loop modifications for the place action in order to have a single attempt first, until we saw that it could be parameterized in an initialization argument. We then modified again the loop in order to force a true case for a place after a pick action is successfully done. It made appear an error linked to the gripper joint. we also discovered that the action was successfully done with the original object size in the demo script. We supposed that the problem comes from the  dimensions of our targeted object. 
+
+This asumption has been succesfully verifie as we decreased the size of the object (in particular the y axis value). Since then the robotic arm was able to successfully perform its pick and place action. 
+
+We also originally thought that for more ease it would have been beter to modify the target coordinates for pick and place actions in order to make the virtual scene in rviz correspond to the reality. But placing the robotic arm in the good position simply shortcut the problem.
 
 
 # POINTS OF IMPROVEMENTS

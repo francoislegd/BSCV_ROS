@@ -90,8 +90,34 @@ Package Rplidar installation after downloading:
 
 `scp rlidar-turtlebot2-indigo.zip turtlebot@192.0.100:/`
 
+Then in order to be runned in ROS we needed the building instructions in the integrated catkin workspace as follows :
+
+`cd ~/catkin_ws
+ catkin_make
+ rospack profile`
+ 
+Then we could perform on the turtlebot the inizialization of the Lidar sensor by launching the basic package command, which also allows to verify if the system works properly :
+
+`roslaunch turtlebot_le2i rplidar_minimal.launch`
+ 
+From there a verification can be done with the next launch command in another terminal :
+ 
+`roslaunch rplidar_le2i view_robot_rplidar.launch`
+
+Further instructions have been performed but since they are part of the project they will be treated in the following section.
+(add link to the concerned section). 
 
 #### Phantom-X
+The Phantom-X arm needed two packages in order to be programmed. We downloaded the arbotix package (from our robotic arm manufacturer) in order to make verifications to see if the system works properly by testing its articulations, and we needed the turtlebot_arm package as it contains a bringup sub-package that will be essential for the rest of the project.
+
+Once downloaded, we wrote the setup instructions in the following order:
+
+`roslaunch turtlebot_arm_bringup arm.launch`
+ 
+Then the testing node is run using rosrun (as it is a python script):
+ 
+`rosrun arbotix_python arbotix_gui`
+(add screencap of the result)
 
 
 

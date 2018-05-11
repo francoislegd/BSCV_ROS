@@ -80,17 +80,15 @@ For this project, some packages were already installed in order to teleoperate t
 
 Some necessary packages however needed to be installed in order to activate the Lidar device on the turtlebot and to teleoperate the robotic arm. They were present in the  rplidar-turtlebot2-indigo meta-package (especially the turtlebot_le2i package); and as arbotix and robotic_arm packages for the Phantom-X. The robotic_arm package also respect the preliminar survey since most of its sub-packages are derivated from the suggested Move_it package.
 
-Turtlebot_bringup, Turtlebot_navigation, turtlebot_arm, Turtlebot_arm_moveit_demos
-
 #### Executable scripts
-go to a specific position.py, pick_and_place.py
+These packages also contains original executables scripts of interest as .launch files for general actions, or as .py files for specific instruction nodes. These latter includes in particular some demonstrations pre-implemented that will reveal to be the easiest way to perform the wanted action to turn the scenario successful.  
 
 ### Original Commandlines and Topics
 
 #### Turtlebot
 Package Rplidar installation after downloading:
 
-'scp rlidar-turtlebot2-indigo.zip turtlebot@192.0.100:/'
+`scp rlidar-turtlebot2-indigo.zip turtlebot@192.0.100:/`
 
 
 #### Phantom-X

@@ -167,11 +167,13 @@ Go_back2.launch, for entering previous point as starting coordinates and origin 
 # INSTRUCTIONS TO RUN THE PROCESS
 
 ### Download and Install
+(will add git clone links and commands)
 
 ### Building
+(will be similar to original commands)
 
 ### Commands
-
+(will add some files description too)
 
 
 
@@ -201,7 +203,7 @@ Speed, precision, making it more autonomous with a singe general launch file (bu
 
 
 # CONCLUSION
-
+(will be concluded after the rest of the report is finished) 
 
 
 # REFERENCES

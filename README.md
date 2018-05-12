@@ -32,7 +32,8 @@ The second system we had to program is a Phantom-X pincher robotic arm, manufact
 ### Scenario description
 Our goal was to complete the following scenario: 
 
-**1.** Move the turtlebot to a table while avoiding obstacles (insert scenario pics for each)
+**1.** Move the turtlebot to a table while avoiding obstacles
+![first pic](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/Scenario_pic1.jpg)
 
 **2.** take a cube with the arm and put it on the turtlebot
 

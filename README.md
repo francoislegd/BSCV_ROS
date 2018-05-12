@@ -36,8 +36,10 @@ Our goal was to complete the following scenario:
 ![first pic](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/Scenario_pic1.jpg)
 
 **2.** take a cube with the arm and put it on the turtlebot
+![second pic](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/Scenario_pic2.jpg)
 
 **3.** then go back to another position while transporting the cube (here it will be the departure point in 1.).
+![third pic](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/Scenario_pic3.jpg)
 
 **These steps should be performed semi-autonomously, so that the user has to write in the terminal a single command for each action to perform.** 
 

@@ -246,7 +246,5 @@ Speed, precision, making it more autonomous with a singe general launch file (bu
 # CONCLUSION
 (will be concluded after the rest of the report is finished) 
 
-AAAAAAAAAAAAAAAAAAAAA
-
 # REFERENCES
 

@@ -173,6 +173,37 @@ Go_back2.launch, for entering previous point as starting coordinates and origin 
 (will be similar to original commands)
 
 ### Commands
+
+The first execution should be performed on the robot's laptop (password is napelturbot)
+
+`ssh turtlebot@192.168.0.100`
+
+The lidar and the map we created for the project are launched trough the following instruction :
+(For the Go_back steps the instruction should be relaunched in order to erase the previous coordinates).
+
+`roslaunch Our_project Turtlebot_Project.launch`
+
+The next instructions should be launched on the Workastation.
+For the first displaceent toward the table, the following command  will publish our setup coordinates relatives to the map inside the move/bas topics. At the same time it will display the map in Rviz with the relative position of the turtlebot. This will allows us to :
+- visualize the displacement of the robot on the map
+- the obstacle avoidance 
+- the shortest path plannification.
+(will add a screencap).
+
+`roslaunch project_ws Project_WS.launch`
+
+Then a third terminal should be open, in which the instruction for the robotic arm will be written. This instruction will display the virtual view of the robotic arm inside another Rviz terminal, while executing the modified pick_and_place python script that will perform the object displacement action.
+
+`roslaunch project_ws Robotic_arm.launch`
+
+Once these commands completed, the three processes should be closed. To perform the two step of the Go_back action, the map should be reloaded an the associated coordinates reset. This instruction is still written on the Turtlebot terminal.
+
+`roslaunch Our_project Turtlebot_project.launch` (second action)
+
+The Go_back and Go_back2 launch files will perform the same actions as the Project_WS launch file, but with different coordinates. 
+
+
+
 (will add some files description too)
 
 

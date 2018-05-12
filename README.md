@@ -10,7 +10,8 @@ This report will describe in details the project given during Bachelor in Comput
 
 
 ### What is ROS ?
-ROS (Robot Operating System) is an open source middleware that allows its users to perform robot programming. As middleware, it possess characteristics of both software and hardware, since it is able to perform various actions like hardware abstraction and low level controls. However this characteristic is of a great interest since it brings important tasks such as the creation of new commandlines or package management, which have proved to be essential tools for the realization of the project. Different versions of ROS exists with some differences, so for compatibility reasons we are using the Indigo realease. (insert ROS logo)
+ROS (Robot Operating System) is an open source middleware that allows its users to perform robot programming. As middleware, it possess characteristics of both software and hardware, since it is able to perform various actions like hardware abstraction and low level controls. However this characteristic is of a great interest since it brings important tasks such as the creation of new commandlines or package management, which have proved to be essential tools for the realization of the project. Different versions of ROS exists with some differences, so for compatibility reasons we are using the Indigo realease. 
+![ROS logo](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/indigoigloo_600.png)
 
 
 ROS presents the advantage to support multiple languages implementations such as roscpp for C++ or rospy for Python, as well as specific libraries in these languages, so one can write actions called "nodes" and then integrate them inside a package with some flexibility. However one of the drawback of ROS is that it is officially supported only on Linux Ubuntu 14.04 (for the indigo version) even if the community built around supports other platforms like MAC OS or Windows. This is due to the reason that the libraries tools have a linux oriented implementation and will not work with another exploiting system. 
@@ -20,7 +21,7 @@ Other various actions can be performed with sets of nodes called "packages" such
 
 #### Turtlebot Description
 The mobile robot used in the Project is a Turtlebot. The original design was created in 2010 at Willow Garage by Melonee Wise and Tully Foote. Here we used the turtlevot version 2 , similar to version 1 but with a better base. It uses the kobuki base built by Yujinrobot (a South Korean firm originally based on conception of vacuum cleaner robots), an Asus laptop with ROS indigo installed (using Ubuntu 14.04), and an embedded Kinect V1 camera in order to perform obstacle avoidance. It's autonomy of roughly 3 hours also makes it very useful and versatile since it allows operations or modifications to be done whithout time constraint.  
-(insert turtlebot pic)
+![turtlebot pic](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/DSC_0031.JPG)
 
 As seen on the previous image, a modification was performed on the Robot by previous students. In addition to the Kinnect camera, a Lidar system has been added as an alternate way to perform obstacle avoidance and mapping. As it is easier to implement, meaning in particular less topics and associated parameters to take into account than with the Kinnect, we had to use it to implement the given scenario. 
 

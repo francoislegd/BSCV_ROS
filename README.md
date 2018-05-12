@@ -200,11 +200,21 @@ Once these commands completed, the three processes should be closed. To perform 
 
 `roslaunch Our_project Turtlebot_project.launch` (second action)
 
-The Go_back and Go_back2 launch files will perform the same actions as the Project_WS launch file, but with different coordinates. 
+(screencap might be added)
 
+The Go_back and Go_back2 launch files will perform the same actions as the Project_WS launch file, but with different coordinates.
 
+`roslaunch project_ws Go_back.launch`
 
-(will add some files description too)
+The setup instruction should relaunched on the turtlebot terminal a last time in order to move the turtlebot to its departure position. 
+
+`roslaunch Our_project Turtlebot_project.launch` (third action)
+
+On the workstation :
+
+`roslaunch project_ws Go_back2.launch`
+
+These are the instructions that should be launched on the terminal to run the given scenario at the beginning of the project.
 
 
 

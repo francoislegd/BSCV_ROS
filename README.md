@@ -174,16 +174,16 @@ Go_back2.launch, for entering previous point as starting coordinates and origin 
 
 ### Commands
 
-The first execution should be performed on the robot's laptop (password is napelturbot)
+The first execution should be performed on the robot's laptop in order to connect the workstation to the Turtlebot.
 
 `ssh turtlebot@192.168.0.100`
 
-The lidar and the map we created for the project are launched trough the following instruction :
+The second command will launch the subpackage turtlebot_le2i rplidar_minimal.launch script along the amcl package in which our created map has been already implemented, whose goal is to atach default coordinates.
 (For the Go_back steps the instruction should be relaunched in order to erase the previous coordinates).
 
-`roslaunch Our_project Turtlebot_Project.launch`
+`roslaunch Our_project Turtlebot_project.launch`
 
-The next instructions should be launched on the Workastation.
+The next instructions should be launched on the workastation.
 For the first displaceent toward the table, the following command  will publish our setup coordinates relatives to the map inside the move/bas topics. At the same time it will display the map in Rviz with the relative position of the turtlebot. This will allows us to :
 - visualize the displacement of the robot on the map
 - the obstacle avoidance 
@@ -198,7 +198,7 @@ Then a third terminal should be open, in which the instruction for the robotic a
 
 Once these commands completed, the three processes should be closed. To perform the two step of the Go_back action, the map should be reloaded an the associated coordinates reset. This instruction is still written on the Turtlebot terminal.
 
-`roslaunch Our_project Turtlebot_project.launch` (second action)
+`roslaunch our_project Turtlebot_project.launch` (second action)
 
 (screencap might be added)
 
@@ -208,7 +208,7 @@ The Go_back and Go_back2 launch files will perform the same actions as the Proje
 
 The setup instruction should relaunched on the turtlebot terminal a last time in order to move the turtlebot to its departure position. 
 
-`roslaunch Our_project Turtlebot_project.launch` (third action)
+`roslaunch our_project Turtlebot_project.launch` (third action)
 
 On the workstation :
 

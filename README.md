@@ -127,6 +127,12 @@ Then the testing node is run using rosrun (as it is a python script):
 
 ![screencap of the result](https://alliance.seas.upenn.edu/~cis700ii/dynamic/team4/wp-content/uploads/sites/6/2015/11/arbGui.png)
 
+We could also teleoperate the arm trough the rviz window by setting manually a planned end position, with a simulation and a run (setting done in the planning menu down left of the window). 
+![menu](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/manual_control.png)
+
+Before opening the Rviz window we had to launch the turtlebot_arm_moveit_config package through the command :
+
+`roslaunch turtlebot_arm_moveit_config turtlebot_arm_moveit.launch`
 
 
 # MODIFICATIONS AND PROJECT IMPLEMENTATION
@@ -159,6 +165,7 @@ we changed inflation radius in order to allow more displacement freedom to the r
 use of A star algorithm instead of dijkstra, while being a little bit less precise it is also quicker to perform 
 
 ### Pick_and_Place adaptations
+As a demonstration python script was already available
 
 
 # CREATED PACKAGES

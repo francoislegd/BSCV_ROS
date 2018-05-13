@@ -165,7 +165,8 @@ we changed inflation radius in order to allow more displacement freedom to the r
 use of A star algorithm instead of dijkstra, while being a little bit less precise it is also quicker to perform 
 
 ### Pick_and_Place adaptations
-As a demonstration python script was already available in the sub-package turtlebot_arm_moveit_demos, we simply had to look at the code and perform some adaptations inside in order to implement it in the scenario. At the beginning we were originally searching inside the topic list of the robotic arm when the turtlebot_arm_moveit_config subpackage was run. (insert pic from smartphone).
+As a demonstration python script was already available in the sub-package turtlebot_arm_moveit_demos, we simply had to look at the code and perform some adaptations inside in order to implement it in the scenario. At the beginning we were originally searching inside the topic list of the robotic arm when the turtlebot_arm_moveit_config subpackage was run. 
+[pick_showing_part of the list](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/topic%20list%20of%20the%20robotic_arm.jpg)
 
 However multiple publications inside various topics (such as `group/execute_trajectory`, `group/move_group` or `group/pickup ` and `group/place`) was not the best way to perform the pick and place scenario, since it was easier to modify the already existing code. 
 
@@ -296,7 +297,14 @@ These are the instructions that should be launched on the terminal to run the gi
 
 
 # RESULT
----will add rosnode graphs
+When the turtlebot launch files are launched we can also run the command
+`rosrun rqt_graph rqt_graph`
+which displays all the interactions between the different active nodes.
+[graph_turtlebot](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_turtlebot.png)
+
+The same can be done for the robotic arm.
+[graph_Phantom-X](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_Phantom-X.png)
+
 ---(add video link and few pics)
 # PROBLEMS ENCOUNTERED
 
@@ -309,7 +317,7 @@ Go_back process had to be divided in two steps since it was not easy for the rob
 We faced several problems on the robotic arm since when we started to make it work wired connections were defectuous, explaining unwanted interruptions in the process. after repairs we faced another problem linked to the gripper articulation. In the pick_and_place python script in the moveit_demos package, we performed numerous modifications as we were facing a problem during the pick and place action. The robot was picking the cube but was unable to perform a place action. We originally thought about unreachable place coordinates but that was not the case. We also removed the present objects in the virtual scene (two boxes and a table) but they were of no influence on the problem. 
 
 We tried also different loop modifications for the place action in order to have a single attempt first, until we saw that it could be parameterized in an initialization argument. We then modified again the loop in order to force a true case for a place after a pick action is successfully done. It made appear an error linked to the gripper joint.
----(insert pick from smartphone).
+![error_pick_message](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/error_message_after%20forcing.jpg).
 
 we also discovered that the action was successfully done with the original object size in the demo script. We supposed that the problem comes from the  dimensions of our targeted object. This asumption has been succesfully verified as we decreased the size of the object (in particular the y axis value). Since then the robotic arm was able to successfully perform its pick and place action. 
 

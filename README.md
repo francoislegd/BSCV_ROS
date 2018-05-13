@@ -136,7 +136,13 @@ Then the testing node is run using rosrun (as it is a python script):
 global costmap common param.yaml, local costmap common param.yaml, global common params.yaml,
 
 #### Pick And Place
-turtlebot_arm_moveit_demos/bin/pick_and_place.py
+To perform the pick an place action, we searched for already implemented script that we could adapt to our context. In the sub-package turtlebot_arm_moveit_demos, we found in the bin directory a python program which is a demo for a pick and place action. As the pick and place is already implemented, we had to only perform minor to moderate adaptations.
+
+Here are the commands to find and edit the original pick and place script on the workstation :
+
+`roscd turtlebot_arm_moveit_demos/bin/`
+
+`gedit pick_and_place.py`
 
 ### Building a map
 We used gmapping package to perform this action, after launching the turtlebot_le2i rplidar_minimal.launch instruction.
@@ -151,18 +157,19 @@ we changed inflation radius in order to allow more displacement freedom to the r
 ### Path Planning 
 use of A star algorithm instead of dijkstra, while being a little bit less precise it is also quicker to perform 
 
-### New Packages
+### Pick_and_Place adaptations
+
+
+# CREATED PACKAGES
 Our_project Package
 Designed to be launchd on the turtlebot, contains one launch file that set up the rplidar
 Project_ws Package
 Designed to be launched from the workstation, for both turtlebot and Robotic arm 
 
-### Launch files Description
-
-#### Our project Package
+### Our project Package scripts
 Turtlebot_project.launch for setting up the lidar on the turtlebot, needs to be rerun for path planning
 
-#### Project_ws Package
+### Project_ws Package scripts
 Project_WS.launch for entering set up coordinates and path plannification, from origin point to target destination.
 Robotic_arm.launch, for activating the pick and place action.
 Go_back.launch for entering target destination's coordinates as a starting point, to another point with coordinates that ease the next step.

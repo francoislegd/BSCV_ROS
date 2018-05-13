@@ -166,7 +166,7 @@ use of A star algorithm instead of dijkstra, while being a little bit less preci
 
 ### Pick_and_Place adaptations
 As a demonstration python script was already available in the sub-package turtlebot_arm_moveit_demos, we simply had to look at the code and perform some adaptations inside in order to implement it in the scenario. At the beginning we were originally searching inside the topic list of the robotic arm when the turtlebot_arm_moveit_config subpackage was run. 
-[pick_showing_part of the list](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/topic%20list%20of%20the%20robotic_arm.jpg)
+![pick_showing_part of the list](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/topic%20list%20of%20the%20robotic_arm.jpg)
 
 However multiple publications inside various topics (such as `group/execute_trajectory`, `group/move_group` or `group/pickup ` and `group/place`) was not the best way to perform the pick and place scenario, since it was easier to modify the already existing code. 
 

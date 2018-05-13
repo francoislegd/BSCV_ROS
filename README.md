@@ -123,6 +123,7 @@ Once downloaded, we wrote the setup instructions in the following order:
 Then the testing node is run using rosrun (as it is a python script):
  
 `rosrun arbotix_python arbotix_gui`
+
 ![screencap of the result](https://alliance.seas.upenn.edu/~cis700ii/dynamic/team4/wp-content/uploads/sites/6/2015/11/arbGui.png)
 
 
@@ -201,6 +202,8 @@ Then a third terminal should be open, in which the instruction for the robotic a
 
 `roslaunch project_ws Robotic_arm.launch`
 
+![screencap of the rviz robotic arm action](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/Performing_Robotic_arm_pick%26place.png)
+
 Once these commands completed, the three processes should be closed. To perform the two step of the Go_back action, the map should be reloaded an the associated coordinates reset. This instruction is still written on the Turtlebot terminal.
 
 `roslaunch our_project Turtlebot_project.launch` (second action)
@@ -224,7 +227,7 @@ These are the instructions that should be launched on the terminal to run the gi
 
 
 # RESULT
-(add video link and few screen caps)
+(add video link and few pics)
 # PROBLEMS ENCOUNTERED
 
 ### On the Turtlebot

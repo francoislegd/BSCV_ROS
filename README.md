@@ -172,21 +172,30 @@ However multiple publications inside various topics (such as `group/execute_traj
 In the pick_and_place demo script inside the subpackage turtlebot_arm_moveit_demos/bin directory, we originally wanted modifiy the virtual scene displayed in Rviz in order to make it correspond to what we saw in reality. Some implemented objects in the original script were commented and the dimensions of the table were changed. (put a pick) These change were removed since they were not useful (the robotic arm could be moved in a better configuration).
 
 As we wanted a successful pick and place action in our scenario, we had to perform and keep the following changes from the starting code:
+
 *1. Line 93 : the tolerance was set to 1 radian instead of 0.1 to allow more freedom to the action regarding orientation in the action.
 This increases the chance of successful pick and place.*
+
 ` # Allow some leeway in position (meters) and orientation (radians)
+
   arm.set_goal_position_tolerance(0.04)
+  
   arm.set_goal_orientation_tolerance(1)`
 
 *2. Lines 105 and 108 : the max attempt values were changed from 3 to 1 since we wanted the process to be performed a single time.*
+
 ` # Set a limit on the number of pick attempts before bailing
+
   max_pick_attempts = 1`
   
+  
 ` # Set a limit on the number of place attempts
-    max_place_attempts = 1
-    rospy.loginfo("Scaling for MoveIt timeout=" + str(rospy.get_param('/move_group/trajectory_execution/allowed_execution_duration_scaling')))`
+
+    max_place_attempts = 1`
+
 
 ***3. Line 171 : the size of the object has been put to [0.07, 0.007, 0.10] for length, width and height instead of [0.017, 0.017, 0.017]. The reason was that the width was not accepted by the gripper, causing each time a failure in the place process, even when the pick sub-action was successful.***
+
 ` # Set the target size [l, w, h]
   target_size = [0.07, 0.007, 0.10]`
 

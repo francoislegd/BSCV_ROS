@@ -172,24 +172,40 @@ However multiple publications inside various topics (such as `group/execute_traj
 In the pick_and_place demo script inside the subpackage turtlebot_arm_moveit_demos/bin directory, we originally wanted modifiy the virtual scene displayed in Rviz in order to make it correspond to what we saw in reality. Some implemented objects in the original script were commented and the dimensions of the table were changed. (put a pick) These change were removed since they were not useful (the robotic arm could be moved in a better configuration).
 
 As we wanted a successful pick and place action in our scenario, we had to perform and keep the following changes from the starting code:
-1. Line 93 : the tolerance was set to 1 radian instead of 0.1 to allow more freedom to the action regarding orientation in the action.
-This increases the chance of successful pick and place
+*1. Line 93 : the tolerance was set to 1 radian instead of 0.1 to allow more freedom to the action regarding orientation in the action.
+This increases the chance of successful pick and place.*
+` # Allow some leeway in position (meters) and orientation (radians)
+  arm.set_goal_position_tolerance(0.04)
+  arm.set_goal_orientation_tolerance(1)`
+
+*2. Lines 105 and 108 : the max attempt values were changed from 3 to 1 since we wanted the process to be performed a single time.*
+` # Set a limit on the number of pick attempts before bailing
+  max_pick_attempts = 1`
+  
+` # Set a limit on the number of place attempts
+    max_place_attempts = 1
+    rospy.loginfo("Scaling for MoveIt timeout=" + str(rospy.get_param('/move_group/trajectory_execution/allowed_execution_duration_scaling')))`
+
+***3. Line 171 : the size of the object has been put to [0.07, 0.007, 0.10] for length, width and height instead of [0.017, 0.017, 0.017]. The reason was that the width was not accepted by the gripper, causing each time a failure in the place process, even when the pick sub-action was successful.***
+` # Set the target size [l, w, h]
+  target_size = [0.07, 0.007, 0.10]`
+
+*4. Lines 178, 186 and 194 : we lowered the height of the table and all associated objects by adding -0.08, in order to add the difference between the base of the robotic arm and the table.* 
+`table_pose.pose.position.z = (table_ground + table_size[2] / 2.0)-0.08`
+
+`box1_pose.pose.position.z = (table_ground + table_size[2] + box1_size[2] / 2.0)-0.08`
+
+`box2_pose.pose.position.z = (table_ground + table_size[2] + box2_size[2] / 2.0)-0.08`
 
 
-2. Lines 105 and 108 : the max attempt values were changed from 3 to 1 since we wanted the process to be performed a single time.
+*5. Line 203 : we lowered the height of the target by -0.075 to perform a proper pick action without colliding the table (instead of -0.08).*
+`target_pose.pose.position.z = (table_ground + table_size[2] + target_size[2] / 2.0)-0.075`
 
+*6. Lines 226 and 227 : x and y place coordinates were changed from -0.03 to -0.15 and -0.15 to -0.23 respectively to optimize the place sub-action on the turtlebot.*
+`place_pose.pose.position.x = table_pose.pose.position.x - 0.15
+place_pose.pose.position.y = -0.23`
 
-**3. Line 171 : the size of the object has been put to [0.07, 0.007, 0.10] for length, width and height instead of [0.017, 0.017, 0.017]. The reason was that the width was not accepted by the gripper, causing each time a failure in the place process, even when the pick sub-action was successful.**
-
-
-4. Lines 178, 186 and 194 : we lowered the height of the table and all associated objects by adding -0.08, in order to add the difference between the base of the robotic arm and the table. 
-
-
-5. Line 203 : we lowered the height of the target by -0.075 to perform a proper pick action without colliding the table (instead of -0.08).
-
-
-6.
-
+These changes allowed us to implement a relatively reliable pick and place action for the scenario of this project. 
 
 
 # CREATED PACKAGES

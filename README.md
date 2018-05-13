@@ -54,7 +54,8 @@ Here is the list of all the files and dependancies contained in this repository 
 Here are some links to some raw material we further had to modify :
 Links to original, unmodified external files packages :
 
-Packages for the Phantom-X robotic arm [arbotix & turtlebot_arm](https://github.com/NathanCrombez/PhantomXPincherArmROS) 
+Package installation instruction for the Phantom-X robotic arm [arbotix & turtlebot_arm instructions](https://github.com/NathanCrombez/PhantomXPincherArmROS)
+Or alternatively [arbotix_ros](https://github.com/NathanCrombez/arbotix_ros) and [turtlebot_arm](https://github.com/NathanCrombez/turtlebot_arm)
 
 Packages useful to make the Lidar device work, especially [turtlebot_le2i](https://github.com/roboticslab-fr/rplidar-turtlebot2) 
 

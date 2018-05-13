@@ -128,9 +128,9 @@ Then the testing node is run using rosrun (as it is a python script):
 ![screencap of the result](https://alliance.seas.upenn.edu/~cis700ii/dynamic/team4/wp-content/uploads/sites/6/2015/11/arbGui.png)
 
 We could also teleoperate the arm trough the rviz window by setting manually a planned end position, which simulates the robotic arm and its movements (settings can be done in the menu down left of the window). 
-![Rviz_window](https://github.com/francoislegd/BSCV_ROS)
+![Rviz_window](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/Rviz_Window.png)
 
-Before opening the Rviz window we had to launch the turtlebot_arm_moveit_config package through the command :
+The Rviz view is opened bylaunching the turtlebot_arm_moveit_config package through the command :
 
 `roslaunch turtlebot_arm_moveit_config turtlebot_arm_moveit.launch`
 

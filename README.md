@@ -27,7 +27,7 @@ As seen on the previous image, a modification was performed on the Robot by prev
 
 #### Phantom-X description
 The second system we had to program is a Phantom-X pincher robotic arm, manufactured by Trossen Robotics. Its conception includes 4 servo-motors plus a gripper to grab objects, giving it 4 degrees of freedom in space. In the project we used it in order to move a cube from a table to a The turtlebot.
-(insert arm pic)
+![arm pic](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/DSC_0035.JPG)
 
 
 ### Scenario description
@@ -123,7 +123,7 @@ Once downloaded, we wrote the setup instructions in the following order:
 Then the testing node is run using rosrun (as it is a python script):
  
 `rosrun arbotix_python arbotix_gui`
-(add screencap of the result)
+![screencap of the result](https://alliance.seas.upenn.edu/~cis700ii/dynamic/team4/wp-content/uploads/sites/6/2015/11/arbGui.png)
 
 
 
@@ -192,9 +192,10 @@ For the first displaceent toward the table, the following command  will publish 
 - visualize the displacement of the robot on the map
 - the obstacle avoidance 
 - the shortest path plannification.
-(will add a screencap).
 
 `roslaunch project_ws Project_WS.launch`
+
+![screencap of the displacement](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/Project_WS_launched.png)
 
 Then a third terminal should be open, in which the instruction for the robotic arm will be written. This instruction will display the virtual view of the robotic arm inside another Rviz terminal, while executing the modified pick_and_place python script that will perform the object displacement action.
 
@@ -204,7 +205,7 @@ Once these commands completed, the three processes should be closed. To perform 
 
 `roslaunch our_project Turtlebot_project.launch` (second action)
 
-(screencap might be added)
+
 
 The Go_back and Go_back2 launch files will perform the same actions as the Project_WS launch file, but with different coordinates.
 

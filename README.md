@@ -300,10 +300,10 @@ These are the instructions that should be launched on the terminal to run the gi
 When the turtlebot launch files are launched we can also run the command
 `rosrun rqt_graph rqt_graph`
 which displays all the interactions between the different active nodes.
-[graph_turtlebot](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_turtlebot.png)
+![graph_turtlebot](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_turtlebot.png)
 
 The same can be done for the robotic arm.
-[graph_Phantom-X](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_Phantom-X.png)
+![graph_Phantom-X](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_Phantom-X.png)
 
 ---(add video link and few pics)
 # PROBLEMS ENCOUNTERED

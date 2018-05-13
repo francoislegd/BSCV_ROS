@@ -169,7 +169,27 @@ As a demonstration python script was already available in the sub-package turtle
 
 However multiple publications inside various topics (such as `group/execute_trajectory`, `group/move_group` or `group/pickup ` and `group/place`) was not the best way to perform the pick and place scenario, since it was easier to modify the already existing code. 
 
-In the pick_and_place demo script inside the subpackage turtlebot_arm_moveit_demos/bin directory, we originally wanted modifiy the virtual scene displayed in Rviz in order to make it correspond to what we saw in reality. Some implemented objects in the original script were commented an the dimensions of the table were changed to correspond 
+In the pick_and_place demo script inside the subpackage turtlebot_arm_moveit_demos/bin directory, we originally wanted modifiy the virtual scene displayed in Rviz in order to make it correspond to what we saw in reality. Some implemented objects in the original script were commented and the dimensions of the table were changed. (put a pick) These change were removed since they were not useful (the robotic arm could be moved in a better configuration).
+
+As we wanted a successful pick and place action in our scenario, we had to perform and keep the following changes from the starting code:
+1. Line 93 : the tolerance was set to 1 radian instead of 0.1 to allow more freedom to the action regarding orientation in the action.
+This increases the chance of successful pick and place
+
+
+2. Lines 105 and 108 : the max attempt values were changed from 3 to 1 since we wanted the process to be performed a single time.
+
+
+**3. Line 171 : the size of the object has been put to [0.07, 0.007, 0.10] for length, width and height instead of [0.017, 0.017, 0.017]. The reason was that the width was not accepted by the gripper, causing each time a failure in the place process, even when the pick sub-action was successful.**
+
+
+4. Lines 178, 186 and 194 : we lowered the height of the table and all associated objects by adding -0.08, in order to add the difference between the base of the robotic arm and the table. 
+
+
+5. Line 203 : we lowered the height of the target by -0.075 to perform a proper pick action without colliding the table (instead of -0.08).
+
+
+6.
+
 
 
 # CREATED PACKAGES

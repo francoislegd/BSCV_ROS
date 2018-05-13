@@ -296,7 +296,8 @@ These are the instructions that should be launched on the terminal to run the gi
 
 
 # RESULT
-(add video link and few pics)
+---will add rosnode graphs
+---(add video link and few pics)
 # PROBLEMS ENCOUNTERED
 
 ### On the Turtlebot
@@ -305,13 +306,14 @@ Original coordinates not precise enough, infation radius too small or to big (du
 Go_back process had to be divided in two steps since it was not easy for the robot to perform due to big angular differences between original and target positions. So to avoid high risks of failure we added a new step that adda an intermediate target position.  
 
 ### On the Robotic arm
-We faced several problems on the robotic arm since when we started to make it work wired connections were defectuous, explaining unwanted interruptions in the process. after repairs we faced another problem linked to the gripper articulation. In the pick_and_place python script in the moveit_demos package, we performed numerous modifications as wewere facing a problem during the pick and place action. The robot was picking the cube but was unable to perform a place action. We originally thought about unreachable place coordinates but that was not the case. We also removed the present objects in the virtual scene (two boxes and a table) but they were of no influence on the problem. 
+We faced several problems on the robotic arm since when we started to make it work wired connections were defectuous, explaining unwanted interruptions in the process. after repairs we faced another problem linked to the gripper articulation. In the pick_and_place python script in the moveit_demos package, we performed numerous modifications as we were facing a problem during the pick and place action. The robot was picking the cube but was unable to perform a place action. We originally thought about unreachable place coordinates but that was not the case. We also removed the present objects in the virtual scene (two boxes and a table) but they were of no influence on the problem. 
 
-We tried also different loop modifications for the place action in order to have a single attempt first, until we saw that it could be parameterized in an initialization argument. We then modified again the loop in order to force a true case for a place after a pick action is successfully done. It made appear an error linked to the gripper joint. we also discovered that the action was successfully done with the original object size in the demo script. We supposed that the problem comes from the  dimensions of our targeted object. 
+We tried also different loop modifications for the place action in order to have a single attempt first, until we saw that it could be parameterized in an initialization argument. We then modified again the loop in order to force a true case for a place after a pick action is successfully done. It made appear an error linked to the gripper joint.
+---(insert pick from smartphone).
 
-This asumption has been succesfully verifie as we decreased the size of the object (in particular the y axis value). Since then the robotic arm was able to successfully perform its pick and place action. 
+we also discovered that the action was successfully done with the original object size in the demo script. We supposed that the problem comes from the  dimensions of our targeted object. This asumption has been succesfully verified as we decreased the size of the object (in particular the y axis value). Since then the robotic arm was able to successfully perform its pick and place action. 
 
-We also originally thought that for more ease it would have been beter to modify the target coordinates for pick and place actions in order to make the virtual scene in rviz correspond to the reality. But placing the robotic arm in the good position simply shortcut the problem. (add some python script modifs ?)
+We also originally thought that for more ease it would have been beter to modify the target coordinates for pick and place actions in order to make the virtual scene in rviz correspond to the reality. But placing the robotic arm in the good position simply shortcut the problem.
 
 
 # POINTS OF IMPROVEMENTS

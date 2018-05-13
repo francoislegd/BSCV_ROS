@@ -165,7 +165,11 @@ we changed inflation radius in order to allow more displacement freedom to the r
 use of A star algorithm instead of dijkstra, while being a little bit less precise it is also quicker to perform 
 
 ### Pick_and_Place adaptations
-As a demonstration python script was already available
+As a demonstration python script was already available in the sub-package turtlebot_arm_moveit_demos, we simply had to look at the code and perform some adaptations inside in order to implement it in the scenario. At the beginning we were originally searching inside the topic list of the robotic arm when the turtlebot_arm_moveit_config subpackage was run. (insert pic from smartphone).
+
+However multiple publications inside various topics (such as `group/execute_trajectory`, `group/move_group` or `group/pickup ` and `group/place`) was not the best way to perform the pick and place scenario, since it was easier to modify the already existing code. 
+
+In the pick_and_place demo script inside the subpackage turtlebot_arm_moveit_demos/bin directory, we originally wanted modifiy the virtual scene displayed in Rviz in order to make it correspond to what we saw in reality. Some implemented objects in the original script were commented an the dimensions of the table were changed to correspond 
 
 
 # CREATED PACKAGES

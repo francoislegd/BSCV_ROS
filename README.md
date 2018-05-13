@@ -176,11 +176,11 @@ As we wanted a successful pick and place action in our scenario, we had to perfo
 *1. Line 93 : the tolerance was set to 1 radian instead of 0.1 to allow more freedom to the action regarding orientation in the action.
 This increases the chance of successful pick and place.*
 
-` # Allow some leeway in position (meters) and orientation (radians)
+` # Allow some leeway in position (meters) and orientation (radians)`
 
-  arm.set_goal_position_tolerance(0.04)
+` arm.set_goal_position_tolerance(0.04)`
   
-  arm.set_goal_orientation_tolerance(1)`
+` arm.set_goal_orientation_tolerance(1)`
 
 *2. Lines 105 and 108 : the max attempt values were changed from 3 to 1 since we wanted the process to be performed a single time.*
 

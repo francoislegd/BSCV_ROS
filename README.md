@@ -15,7 +15,7 @@ ROS (Robot Operating System) is an open source middleware that allows its users 
 
 
 ROS presents the advantage to support multiple languages implementations such as roscpp for C++ or rospy for Python, as well as specific libraries in these languages, so one can write actions called "nodes" and then integrate them inside a package with some flexibility. However one of the drawback of ROS is that it is officially supported only on Linux Ubuntu 14.04 (for the indigo version) even if the community built around supports other platforms like MAC OS or Windows. This is due to the reason that the libraries tools have a linux oriented implementation and will not work with another exploiting system. 
-Other various actions can be performed with sets of nodes called "packages" such as graphic visualization or network connexions (between active nodes). (insert graph image)
+Other various actions can be performed with sets of nodes called "packages" such as graphic visualization or network connexions (between active nodes).
 
 ### Robots used for the scenario
 
@@ -48,7 +48,7 @@ Our goal was to complete the following scenario:
 
 ### File list
 Here is the list of all the files and dependancies contained in this repository we needed to build the project:
-(List of all the files and their dependencies in this repository)
+---(List of all the files and their dependencies in this repository)
 
 ### Original Code links
 Here are some links to some raw material we further had to modify :
@@ -60,7 +60,7 @@ Or alternatively [arbotix_ros](https://github.com/NathanCrombez/arbotix_ros) and
 Packages useful to make the Lidar device work, especially [turtlebot_le2i](https://github.com/roboticslab-fr/rplidar-turtlebot2) 
 
 ### Information links
-Links differents sections in the readme file for more detailed explanations :
+---Links differents sections in the readme file for more detailed explanations :
 
 [INTRODUCTION](#INTRODUCTION)
 
@@ -75,10 +75,10 @@ We had to start with the following material :
 - Phantom-X pincher arm
 - ROS indigo (and Ubuntu 14.04) 
 - Computer as workstation
-- Lidar device (will put links to the intro)
+- Lidar device (will put links to the intro).
 
 ### Starting bases
-Here we will discuss about the original files and actions before the modifications
+Here we will discuss about the original files and actions before the modifications.
 
 #### Packages
 For this project, some packages were already installed in order to teleoperate the turtlebot : OMPL, AMCL, Move_Base and Turtlebot Navigation. The original suggestions carried by our preliminary survey were respected since we were requiring the use of the OMPL, AMCL and Move_Base packages.
@@ -112,10 +112,10 @@ From there a verification can be done with the next launch command in another te
 `roslaunch rplidar_le2i view_robot_rplidar.launch`
 
 Further instructions have been performed but since they are part of the project they will be treated in the following section.
-(add link to the concerned section). 
+---(add link to the concerned section). 
 
 #### Phantom-X
-The Phantom-X arm needed two packages in order to be programmed. We downloaded the arbotix package in order to make verifications to see if the system works properly by testing its articulations. We installed the turtlebot_arm package as it contains a bringup sub-package that will be essential for the rest of the project.
+The Phantom-X arm needed two packages in order to be programmed. We downloaded the arbotix package in order to make verifications to see if the system works properly, by testing its articulations. We installed the turtlebot_arm package as it contains a bringup sub-package that will be essential for the rest of the project.
 
 Once downloaded, we wrote the setup instructions in the following order:
 
@@ -127,8 +127,8 @@ Then the testing node is run using rosrun (as it is a python script):
 
 ![screencap of the result](https://alliance.seas.upenn.edu/~cis700ii/dynamic/team4/wp-content/uploads/sites/6/2015/11/arbGui.png)
 
-We could also teleoperate the arm trough the rviz window by setting manually a planned end position, with a simulation and a run (setting done in the planning menu down left of the window). 
-![menu](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/manual_control.png)
+We could also teleoperate the arm trough the rviz window by setting manually a planned end position, which simulates the robotic arm and its movements (settings can be done in the menu down left of the window). 
+![Rviz_window](https://github.com/francoislegd/BSCV_ROS)
 
 Before opening the Rviz window we had to launch the turtlebot_arm_moveit_config package through the command :
 

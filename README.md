@@ -229,13 +229,13 @@ Another changes were made in [global_costmap_params](https://github.com/turtlebo
 
 `    - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}`
 
-was replaced with just: 'map_type : costmap' and similarly in the [local_costmap_params](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/param/local_costmap_params.yaml) follwong plugins:
+was replaced with just: `map_type : costmap` and similarly in the [local_costmap_params](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/param/local_costmap_params.yaml) follwong plugins:
 
 `plugins:                                                             `
 
 `    - {name: obstacle_layer,      type: "costmap_2d::VoxelLayer"}    `
 
-`    - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}` were replaced with just: 'map_type : costmap'.
+`    - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}` were replaced with just: `map_type : costmap`.
 
 After making these changes we were able to achive obstacle avoidance with just lidr sensor.
 

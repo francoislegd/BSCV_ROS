@@ -511,3 +511,8 @@ We were successufully able to implement obstacle avoidance only using lidar. Fol
 
 # REFERENCES
 ROS WIKI PAGES (http://wiki.ros.org/)
+
+# CREDITS
+Project done by:
+[Hassan SAEED](https://github.com/hassansrs)
+[François LEGRAND](https://github.com/francoislegd)

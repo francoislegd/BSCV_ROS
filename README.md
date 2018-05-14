@@ -240,7 +240,7 @@ After making these changes we were able to achive obstacle avoidance with just l
 
 
 ### Path Planning 
-use of A star algorithm instead of dijkstra, while being a little bit less precise it is also quicker to perform 
+Use of A star algorithm instead of dijkstra, while being a little bit less precise it is also quicker to perform.This was achieved by changing the parameter use_dijkstra value in [global_planner_params.yaml](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/param/global_planner_params.yaml) from True to False.
 
 ### Pick_and_Place adaptations
 As a demonstration python script was already available in the sub-package turtlebot_arm_moveit_demos, we simply had to look at the code and perform some adaptations inside in order to implement it in the scenario. At the beginning we were originally searching inside the topic list of the robotic arm when the turtlebot_arm_moveit_config subpackage was run. 

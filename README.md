@@ -302,13 +302,11 @@ These changes allowed us to implement a relatively reliable pick and place actio
 
 
 # CREATED PACKAGES
-Our_project Package
-Designed to be launchd on the turtlebot, contains one launch file that set up the rplidar
-Project_ws Package
-Designed to be launched from the workstation, for both turtlebot and Robotic arm 
+
+We created two launch that had to be implemented on their specific machine.
 
 ### Our project Package scripts
-Turtlebot_project.launch for setting up the lidar on the turtlebot, needs to be rerun for path planning
+Our_project package Turtlebot_project.launch for setting up the lidar on the turtlebot, needs to be rerun for path planning
 
 ### Project_ws Package scripts
 Project_WS.launch for entering set up coordinates and path plannification, from origin point to target destination.

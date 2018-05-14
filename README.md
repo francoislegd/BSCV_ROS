@@ -140,7 +140,16 @@ The Rviz view is opened bylaunching the turtlebot_arm_moveit_config package thro
 ### Scripts of interest
 
 #### Turtlebot
-global costmap common param.yaml, local costmap common param.yaml, global common params.yaml,
+##### Ros Navigation
+To perform ROS navigation we need two things:
+•	We need a map (Generated using the gmapping package)
+•	We need to be able to localize robot on that map. Having a map alone without localization is useless, if the robot is unknown about its whereabouts. So in order to be able to achieve proper navigation task, robot should be able to know in which position of the Map it is located and with which orientation at every moment. This concept of knowing the whereabouts in the Map is referred to as ‘Localization’ in terms of ROS navigation.
+To achieve the locomotion of a robot in a known map, we need some sort of mechanism in ROS environment. This is achieved by using a Navigation stack. This stack is composed of set of ROS nodes and algorithms that are vital to move the robot from one point to another, while making sure obstacles are avoided that may arise in its(robot’s) path. 
+Navigation Stack, takes an input the current location of the robot, the goal pose, the Odometry data of Robot (wheel encoders etc..) and data from a sensor (in our case we used Laser sensor). An in return, it outputs the necessary velocity commands and forward them to the mobile base in order to move the robot to the designated goal, while making sure the turtlebot won’t crash against obstacles, or get lost in the process.
+Following picture is taken from ROS wiki page that mentions the building blocks of Navigation Stack.
+![NavigationStack](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/overview_tf.png)
+
+
 
 #### Pick And Place
 To perform the pick an place action, we searched for already implemented script that we could adapt to our context. In the sub-package turtlebot_arm_moveit_demos, we found in the bin directory a python program which is a demo for a pick and place action. As the pick and place is already implemented, we had to only perform minor to moderate adaptations.

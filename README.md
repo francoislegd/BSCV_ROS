@@ -215,7 +215,31 @@ at the same time we launch the rviz instruction in order to make move in the spa
 Originally put on a black square reference , memorized, we go also to the pose8position topic in order to take it. we use also amcl package to initialize coordinates on the map.
 
 ### Obstacle avoidance
-we changed inflation radius in order to allow more displacement freedom to the robot. Inflation surrounds all obstacles and is also present in the local costmap
+Generally when turtlebot is used with ros [turtlebot_navigation](https://github.com/turtlebot/turtlebot_apps/tree/indigo/turtlebot_navigation) package and using the command `roslaunch turtlebot_navigation amcl_demo.launch map_file:=/tmp/my_map.yaml` mentined here on roswiki [page](http://wiki.ros.org/turtlebot_navigation/Tutorials/Autonomously%20navigate%20in%20a%20known%20map) for autonomous navigation, it will be seen that turtlebot would be able to move to desired goal position while making sure there it avoids and obstacles in the way. But we realized this is only works if you are working with kinnect sensor, in case of Lidr we found that obstacle avoidance was not working.
+So some changes were made in the ROS turtlebot_navigation parameters. In the [costmap_common_param](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/param/costmap_common_params.yaml) we cahnged the max_obstacle_height from 0.25 to 1.00.
+max_obstacle_height represents maximum height of any obstacle to be inserted into the costmap in meters. This parameter should be set to slighlty higher than the height of the robot. So after calucalting the mounted Lidr height on turtlebot we selected 1.00.
+
+Another changes were made in [global_costmap_params](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/param/global_costmap_params.yaml). 
+
+`plugins:                                                             `
+
+`    - {name: static_layer,            type: "costmap_2d::StaticLayer"}    `
+
+`    - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}`
+
+`    - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}`
+
+was replaced with just: 'map_type : costmap' and similarly in the [local_costmap_params](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/param/local_costmap_params.yaml) follwong plugins:
+
+`plugins:                                                             `
+
+`    - {name: obstacle_layer,      type: "costmap_2d::VoxelLayer"}    `
+
+`    - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}` were replaced with just: 'map_type : costmap'.
+
+After making these changes we were able to achive obstacle avoidance with just lidr sensor.
+
+
 
 ### Path Planning 
 use of A star algorithm instead of dijkstra, while being a little bit less precise it is also quicker to perform 

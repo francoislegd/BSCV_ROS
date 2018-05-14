@@ -383,7 +383,7 @@ which displays all the interactions between the different active nodes.
 The same can be done for the robotic arm.
 ![graph_Phantom-X](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_Phantom-X.png)
 
-![video](https://www.youtube.com/watch?v=_z6LXOft7aQ)
+[video](https://www.youtube.com/watch?v=_z6LXOft7aQ)
 
 # PROBLEMS ENCOUNTERED
 

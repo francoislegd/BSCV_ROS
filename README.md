@@ -81,7 +81,7 @@ We had to start with the following material :
 Here we will discuss about the original files and actions before the modifications.
 
 #### Packages
-For this project, some packages were already installed in order to teleoperate the turtlebot : OMPL, AMCL, Move_Base and Turtlebot Navigation. The original suggestions carried by our preliminary survey were respected since we were requiring the use of the OMPL, AMCL and Move_Base packages.
+For this project, some packages were already installed in order to teleoperate the turtlebot : Gmapping, AMCL, Move_Base and Turtlebot Navigation. The original suggestions carried by our preliminary survey were respected since we were requiring the use of the  AMCL and Move_Base packages.
 
 Some necessary packages however needed to be installed in order to activate the Lidar device on the turtlebot and to teleoperate the robotic arm. They were present in the  rplidar-turtlebot2-indigo meta-package (especially the turtlebot_le2i package); and as arbotix and robotic_arm packages for the Phantom-X. The robotic_arm package also respects the preliminar survey since most of its sub-packages are derivated from the suggested Move_it package.
 
@@ -389,9 +389,12 @@ The same can be done for the robotic arm.
 # PROBLEMS ENCOUNTERED
 
 ### On the Turtlebot
-Original coordinates not precise enough, infation radius too small or to big (due to the conception of the robot, it was too far, or the lidar extension collided with the objects), solution, add a plate on which the object is placed, in order that almost no modifications have to be done on pose coordinate while not disturbing the lidar device or impairing obstacle avoidance with blind angles.
 
-Go_back process had to be divided in two steps since it was not easy for the robot to perform due to big angular differences between original and target positions. So to avoid high risks of failure we added a new step that adda an intermediate target position.  
+First problem we had was when turtlebot was initally given the command to move from its initial position towards goal or going back to its initial position after picking up the cube, sometimes it used to move away from its calculated path, and once this used to happen, it used to stop moving. What we did was here simpy reduced the max_vel_x in this [planner](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/param/dwa_local_planner_params.yaml) from 0.5 to 0.3. This way with reduced speed turtlebot didn't use to diverge from its trajectory and thus was able to fill the assigned tasks successfully.
+
+After the cube has been placed on the turtlebot, it had to return back to its initial position. But the problem was since it was too close the table(obstacle) somehow it was not possible for turtlebot to perform the 180 degree turn, also due to set inflation radius, recovery behaviour were not satisfactory, We tried different inflation radius and cost_scaling factor, but then the problem arose when turtlebot had to cross the small room and enter into main room towards the table to recieve the cube there was always edge collision with the door edges.So therefore for going back to its initial position Go_back process was divided into two parts to increase the success chances.
+
+
 
 ### On the Robotic arm
 We faced several problems on the robotic arm since when we started to make it work wired connections were defectuous, explaining unwanted interruptions in the process. after repairs we faced another problem linked to the gripper articulation. In the pick_and_place python script in the moveit_demos package, we performed numerous modifications as we were facing a problem during the pick and place action. The robot was picking the cube but was unable to perform a place action. We originally thought about unreachable place coordinates but that was not the case. We also removed the present objects in the virtual scene (two boxes and a table) but they were of no influence on the problem. 

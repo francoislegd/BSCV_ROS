@@ -303,10 +303,21 @@ These changes allowed us to implement a relatively reliable pick and place actio
 
 # CREATED PACKAGES
 
-We created two launch that had to be implemented on their specific machine.
+We created two packages that had to be implemented on their specific machine.
 
 ### Our project Package scripts
-Our_project package Turtlebot_project.launch for setting up the lidar on the turtlebot, needs to be rerun for path planning
+Our_project package contains the Turtlebot_project.launch script that should be run on the turtlebot since it is designed to launch the Lidar by integrating the launch command of the rplidar_le2i package. This launch file also call the map we created, that will be set for the Rviz visualization, and launch the amcl_demo package.
+
+<launch>
+
+	<!--include another launch file -->
+	<include file = "$(find turtlebot_le2i)/launch/rplidar_minimal.launch" />
+	<include file = "$(find turtlebot_navigation)/launch/amcl_demo.launch">
+	<arg name= "map_file" value="/home/turtlebot/ros/indigo/catkin_ws/map/hassan_lidar.yaml"/>
+	</include>
+	
+</launch>
+
 
 ### Project_ws Package scripts
 Project_WS.launch for entering set up coordinates and path plannification, from origin point to target destination.

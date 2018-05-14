@@ -397,6 +397,7 @@ After the cube has been placed on the turtlebot, it had to return back to its in
 In our lauch file Project_WS we mentioned the initial pose coordinates: '<node pkg="rostopic" type="rostopic" name="rostopic" args="pub -1 /initialpose geometry_msgs/PoseWithCovarianceStamped 
 '{header: {seq: 0, stamp:{secs: 0, nsecs: 0}, frame_id: 'map'}, pose: {pose:{position: {x: -4.96073627472, y: 1.06203043461 , z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.371774223976, w: 0.928323179926}}}}'"/>' so that turtlebot everytime on launch of this launch file is able to localize itslef automatically rather than bieng manually localized using 2D pose estimate from Rviz. But the problem was with it most of the time on lauch of this launch file, it was observed that the turtlebot was not being properly localized, the map overlayed on map seemed unmatching, therefore we changed the coordinates of the initial pose of x, y and a in the [amcl_demo.launch](https://github.com/turtlebot/turtlebot_apps/blob/indigo/turtlebot_navigation/launch/amcl_demo.launch) turtlebot_navigation package.
 as can be seen below:
+
 `<!-- AMCL -->`
 
   `<arg name="custom_amcl_launch_file" default="$(find turtlebot_navigation)/launch/includes/amcl/$(arg 3d_sensor)_amcl.launch.xml"/>`

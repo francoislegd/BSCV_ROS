@@ -308,7 +308,7 @@ We created two packages that had to be implemented on their specific machine.
 ### Our project Package scripts
 Our_project package contains the Turtlebot_project.launch script that should be run on the turtlebot since it is designed to launch the Lidar by integrating the launch command of the rplidar_le2i package. This launch file also call the map we created, that will be set for the Rviz visualization, and launch the amcl_demo package.
 
-<launch>
+`<launch>`
 
 	<!--include another launch file -->
 	<include file = "$(find turtlebot_le2i)/launch/rplidar_minimal.launch" />
@@ -316,15 +316,47 @@ Our_project package contains the Turtlebot_project.launch script that should be 
 	<arg name= "map_file" value="/home/turtlebot/ros/indigo/catkin_ws/map/hassan_lidar.yaml"/>
 	</include>
 	
-</launch>
+`</launch>`
 
 
 ### Project_ws Package scripts
-Project_WS.launch for entering set up coordinates and path plannification, from origin point to target destination.
-Robotic_arm.launch, for activating the pick and place action.
-Go_back.launch for entering target destination's coordinates as a starting point, to another point with coordinates that ease the next step.
-Go_back2.launch, for entering previous point as starting coordinates and origin point as target destination.
+The project_ws package is designed to be installed on the workstation. It contains 4 launch files, three for the navigation of the turtlebot (Project_WS.launch, Go_back.launch and Go_back2.launch), and one for the Phantom-X pincher arm. for entering set up coordinates and path plannification, from origin point to target destination.
+- Project_WS.launch is run  to perform the first displacement to the table.
+- Go_back.launch was made for entering target destination's coordinates as a starting point, to another point with coordinates that ease the return step.
+- Go_back2.launch, for entering previous point as starting coordinates and origin point as target destination.
+These three packages share the same script with changes only to the coordinates published in the specified topics. They allow the user to see the robot's displacement in Rviz.
 
+`<launch>`
+
+	<!--include another launch file -->
+	<include file = "$(find turtlebot_rviz_launchers)/launch/view_navigation.launch"/>
+	<!--Start a node-->
+	<!--node pkg="turtlebot" name="go_to_specific_point_on_map" type= "go_to_specific_point_on_map.py">
+	</node>-->
+
+	<node pkg="rostopic" type="rostopic" name="rostopic" args="pub -1 /initialpose geometry_msgs/PoseWithCovarianceStamped 
+'{header: {seq: 0, stamp:{secs: 0, nsecs: 0}, frame_id: 'map'}, pose: {pose:{position: {x: -4.96073627472, y: 1.06203043461 , z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.371774223976, w: 0.928323179926}}}}'"/>
+
+
+	<node pkg="rostopic" type="rostopic" name="rostopicgoal" args="pub -1 /move_base_simple/goal geometry_msgs/PoseStamped 
+'{header: {seq: 0, stamp:{secs: 0, nsecs: 0}, frame_id: 'map'}, pose:{position: {x: 0.318982511759, y: -0.757121920586 , z: 0.0}, orientation: {x: 0.0, y: 0.0, z: -0.360750805748, w: 0.932662241196}}}'"/>
+
+`</launch>`
+
+
+The Robotic_arm.launch file activate the bringup, launch the rviz window, display and perform the pick and place action by calling the script pick_and_place. 
+
+`<launch>`
+
+	<!--include robotic arm launch files -->
+	<include file = "$(find turtlebot_arm_bringup)/launch/arm.launch"/>
+	<include file = "$(find turtlebot_arm_moveit_config)/launch/turtlebot_arm_moveit.launch"/>
+
+	<!--Start a node-->
+	<node pkg="turtlebot_arm_moveit_demos" name="originpick_and_place" type= "original_pick_and_place.py">
+	</node>
+
+`</launch>`
 
 # INSTRUCTIONS TO RUN THE PROCESS
 

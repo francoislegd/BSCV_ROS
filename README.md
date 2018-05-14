@@ -68,18 +68,29 @@ Or alternatively [arbotix_ros](https://github.com/NathanCrombez/arbotix_ros) and
 Packages useful to make the Lidar device work, especially [turtlebot_le2i](https://github.com/roboticslab-fr/rplidar-turtlebot2) 
 
 ### Information links
----Links differents sections in the readme file for more detailed explanations :
+Links toward differents sections in the readme file for more detailed explanations :
 
 [INTRODUCTION](#INTRODUCTION)
+
 [REPOSITORY CONTENT](#REPOSITORY-CONTENT)
+
 [ORIGINAL CONTENT](#ORIGINAL-CONTENT)
+
 [MODIFICATIONS AND PROJECT IMPLEMENTATION](#MODIFICATIONS-AND-PROJECT-IMPLEMENTATION)
+
 [CREATED PACKAGES](#CREATED-PACKAGES)
+
 [INSTRUCTIONS TO RUN THE PROCESS](#INSTRUCTIONS-TO-RUN-THE-PROCESS)
+
 [RESULT](#RESULT)
+
 [PROBLEMS ENCOUNTERED](#PROBLEMS-ENCOUNTERED)
+
 [POINTS OF IMPROVEMENTS](#POINTS-OF-IMPROVEMENTS)
+
 [CONCLUSION](#CONCLUSION)
+
+[CREDITS](#CREDITS)
 
 # ORIGINAL CONTENT
 Here we will describe the original content we had the access prior to its implementation in the project.

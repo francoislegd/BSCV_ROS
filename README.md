@@ -421,12 +421,14 @@ We also originally thought that for more ease it would have been beter to modify
 
 # POINTS OF IMPROVEMENTS
 
-Speed, precision, making it more autonomous with a singe general launch file (but raises new problems)
+Speed, precision, making it more autonomous with a singe general launch file are some points of improvements, but it also raises new problems like how to avoid relaunching for each displacement the lidar package.
+Instead of using the lidar, we can use together lidar and kinnect for better performances.
+Kinnect sensor can also be used in parallel with the robotic arm. This way it will make the pick and place scenario more flexible as we do not have to hardcode coordinates of the cube. 
 
 
 
 # CONCLUSION
-(will be concluded after the rest of the report is finished) 
+We were successufully able to implement obstacle avoidance only using lidar. Following this we were able to perform a reliable pick and place process. In the end we were able to implement the turtlebot autonomous navigation with pick and place scenario. 
 
 # REFERENCES
 ROS WIKI PAGES (http://wiki.ros.org/)

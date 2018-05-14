@@ -101,7 +101,7 @@ We had to start with the following material :
 - Phantom-X pincher arm
 - ROS indigo (and Ubuntu 14.04) 
 - Computer as workstation
-- Lidar device (will put links to the intro).
+- Lidar device.
 
 ### Starting bases
 Here we will discuss about the original files and actions before the modifications.

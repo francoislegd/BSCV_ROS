@@ -427,6 +427,7 @@ The same can be done for the robotic arm.
 
 [The implementation of the project can be seen here](https://www.youtube.com/watch?v=_z6LXOft7aQ)
 
+
 # PROBLEMS ENCOUNTERED
 
 ### On the Turtlebot

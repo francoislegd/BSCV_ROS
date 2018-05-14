@@ -417,4 +417,4 @@ Speed, precision, making it more autonomous with a singe general launch file (bu
 (will be concluded after the rest of the report is finished) 
 
 # REFERENCES
-
+ROS WIKI PAGES (http://wiki.ros.org/)

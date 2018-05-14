@@ -69,7 +69,6 @@ Packages useful to make the Lidar device work, especially [turtlebot_le2i](https
 [INTRODUCTION](#INTRODUCTION)
 
 
-
 # ORIGINAL CONTENT
 Here we will describe the original content we had the access prior to its implementation in the project.
 

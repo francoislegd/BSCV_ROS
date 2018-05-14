@@ -362,10 +362,34 @@ The Robotic_arm.launch file activate the bringup, launch the rviz window, displa
 # INSTRUCTIONS TO RUN THE PROCESS
 
 ### Download and Install
-(will add git clone links and commands)
+
+`cd ~/ros/indigo/catkin_ws/src`
+
+`git clone https://github.com/francoislegd/BSCV_ROS.git`
+
+We should unzip the files Project_map and Project_packages, and move the others outside the ros directory.
+Then the extracted packages should be placed inside the src directory.
+Our_project package should be copied to the turtlebot and then be deleted from the directory.
+
+`ssh turtlebot@192.168.0.100`
+
+`scp Our_project turtlebot@192.168.0.100:/`
+
+We should displace the file manually to the /ros/indigo/catkin_ws/src directory.
 
 ### Building
-(will be similar to original commands)
+
+On the workstation from the src directory:
+
+`cd .. && catkin_make`
+
+On the turtlebot :
+
+`ssh turtlebot@192.168.0.100`
+
+`cd /ros/indigo/catkin_ws/src`
+
+`sudo cd .. && catkin_make`
 
 ### Commands
 
@@ -426,7 +450,6 @@ The same can be done for the robotic arm.
 ![graph_Phantom-X](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_Phantom-X.png)
 
 [The implementation of the project can be seen here](https://www.youtube.com/watch?v=_z6LXOft7aQ)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_z6LXOft7aQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 # PROBLEMS ENCOUNTERED

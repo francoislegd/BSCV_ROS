@@ -426,6 +426,7 @@ The same can be done for the robotic arm.
 ![graph_Phantom-X](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/rosgraph_Phantom-X.png)
 
 [The implementation of the project can be seen here](https://www.youtube.com/watch?v=_z6LXOft7aQ)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_z6LXOft7aQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 # PROBLEMS ENCOUNTERED

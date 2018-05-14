@@ -48,7 +48,11 @@ Our goal was to complete the following scenario:
 
 ### File list
 Here is the list of all the files and dependancies contained in this repository we needed to build the project:
----(List of all the files and their dependencies in this repository)
+[1.zip file containing all the packages with their modified scripts](https://github.com/francoislegd/BSCV_ROS/blob/master/Project_Packages.zip)
+[2.zip file containing the created map for the project]
+https://github.com/francoislegd/BSCV_ROS/blob/master/Project_map.zip
+[3.file containing the orginal code for the pick and place action with comments on the lines which have been modified in the project](https://github.com/francoislegd/BSCV_ROS/blob/master/unmodified_pick_and_place.zip)
+[4.folder containg pics and screencaps](https://github.com/francoislegd/BSCV_ROS/tree/master/Pictures)
 
 ### Original Code links
 Here are some links to some raw material we further had to modify :
@@ -111,9 +115,6 @@ From there a verification can be done with the next launch command in another te
  
 `roslaunch rplidar_le2i view_robot_rplidar.launch`
 
-Further instructions have been performed but since they are part of the project they will be treated in the following section.
----(add link to the concerned section). 
-
 #### Phantom-X
 The Phantom-X arm needed two packages in order to be programmed. We downloaded the arbotix package in order to make verifications to see if the system works properly, by testing its articulations. We installed the turtlebot_arm package as it contains a bringup sub-package that will be essential for the rest of the project.
 
@@ -130,7 +131,7 @@ Then the testing node is run using rosrun (as it is a python script):
 We could also teleoperate the arm trough the rviz window by setting manually a planned end position, which simulates the robotic arm and its movements (settings can be done in the menu down left of the window). 
 ![Rviz_window](https://github.com/francoislegd/BSCV_ROS/blob/master/Pictures/Rviz_Window.png)
 
-The Rviz view is opened bylaunching the turtlebot_arm_moveit_config package through the command :
+The Rviz view is opened by launching the turtlebot_arm_moveit_config package through the command :
 
 `roslaunch turtlebot_arm_moveit_config turtlebot_arm_moveit.launch`
 

@@ -48,10 +48,14 @@ Our goal was to complete the following scenario:
 
 ### File list
 Here is the list of all the files and dependancies contained in this repository we needed to build the project:
+
 [1.zip file containing all the packages with their modified scripts](https://github.com/francoislegd/BSCV_ROS/blob/master/Project_Packages.zip)
+
 [2.zip file containing the created map for the project]
-https://github.com/francoislegd/BSCV_ROS/blob/master/Project_map.zip
+(https://github.com/francoislegd/BSCV_ROS/blob/master/Project_map.zip)
+
 [3.file containing the orginal code for the pick and place action with comments on the lines which have been modified in the project](https://github.com/francoislegd/BSCV_ROS/blob/master/unmodified_pick_and_place.zip)
+
 [4.folder containg pics and screencaps](https://github.com/francoislegd/BSCV_ROS/tree/master/Pictures)
 
 ### Original Code links
@@ -67,7 +71,15 @@ Packages useful to make the Lidar device work, especially [turtlebot_le2i](https
 ---Links differents sections in the readme file for more detailed explanations :
 
 [INTRODUCTION](#INTRODUCTION)
-
+[REPOSITORY CONTENT](#REPOSITORY-CONTENT)
+[ORIGINAL CONTENT](#ORIGINAL-CONTENT)
+[MODIFICATIONS AND PROJECT IMPLEMENTATION](#MODIFICATIONS-AND-PROJECT-IMPLEMENTATION)
+[CREATED PACKAGES](#CREATED-PACKAGES)
+[INSTRUCTIONS TO RUN THE PROCESS](#INSTRUCTIONS-TO-RUN-THE-PROCESS)
+[RESULT](#RESULT)
+[PROBLEMS ENCOUNTERED](#PROBLEMS-ENCOUNTERED)
+[POINTS OF IMPROVEMENTS](#POINTS-OF-IMPROVEMENTS)
+[CONCLUSION](#CONCLUSION)
 
 # ORIGINAL CONTENT
 Here we will describe the original content we had the access prior to its implementation in the project.
